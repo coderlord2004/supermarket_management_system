@@ -1,11 +1,11 @@
 package model;
 
 public class User {
-    protected int id;
-    protected String username;
-    protected String password;
-    protected String name;
-    protected String role;
+    private int id;
+    private String username;
+    private String password;
+    private String name;
+    private String role;
 
     public User() {}
 

@@ -1,7 +1,6 @@
 package model;
 
 public class Staff extends User{
-    private int staffId;
     private String position;
 
     public Staff() {}
