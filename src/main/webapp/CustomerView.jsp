@@ -8,118 +8,216 @@
     }
     List<Product> products = (List<Product>) request.getAttribute("products");
 %>
-<html>
+<%@ include file="layout/head.jsp" %>
+<!DOCTYPE html>
+<html lang="vi">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Danh sách sản phẩm</title>
-    <style>
-        body {
-            font-family: "Segoe UI", sans-serif;
-            background: #f7f9fc;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
-            padding: 50px;
-        }
-        .container {
-            background: white;
-            width: 900px;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-        }
-        h2 { color: #333; margin-bottom: 10px; }
-        form {
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-        }
-        input[type="search"] {
-            width: 80%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
-        button {
-            padding: 10px 20px;
-            background: #4a90e2;
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-        button:hover { background: #357ab8; }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            text-align: center;
-            padding: 10px;
-        }
-        th { background: #4a90e2; color: white; }
-        tr:nth-child(even) { background: #f2f2f2; }
-        a.action {
-            text-decoration: none;
-            color: #4a90e2;
-            font-weight: bold;
-        }
-        a.logout {
-            display: inline-block;
-            margin-top: 15px;
-            color: #e74c3c;
-            text-decoration: none;
-        }
-        a.logout:hover { text-decoration: underline; }
-    </style>
-</head>
-<body>
-<div class="container">
-    <h2>Xin chào, <%= customer.getName() %>!</h2>
-
-    <form action="products" method="get">
-        <input type="search" name="query" placeholder="Tìm kiếm sản phẩm..." />
-        <button type="submit">Tìm kiếm</button>
-    </form>
-
-    <table>
-        <thead>
-        <tr>
-            <th>STT</th>
-            <th>Mã sản phẩm</th>
-            <th>Tên sản phẩm</th>
-            <th>Giá (VNĐ)</th>
-            <th>Hành động</th>
-        </tr>
-        </thead>
-        <tbody>
-        <%
-            if (products != null && !products.isEmpty()) {
-                for (Product p : products) {
-        %>
-        <tr>
-            <td><%= p.getId() %></td>
-            <td><%= p.getId() %></td>
-            <td><%= p.getName() %></td>
-            <td><%= String.format("%,.0f", p.getPrice()) %></td>
-            <td><a class="action" href="productDetail?id=<%= p.getId() %>">Xem chi tiết</a></td>
-        </tr>
-        <%
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                        },
+                        dark: {
+                            800: '#1f2937',
+                            900: '#111827',
+                        },
+                        accent: {
+                            400: '#34d399',
+                            500: '#10b981',
+                        }
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-in-out',
+                        'slide-up': 'slideUp 0.3s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(10px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
                 }
-            } else {
-        %>
-        <tr><td colspan="5">Không có sản phẩm nào được tìm thấy.</td></tr>
-        <%
             }
-        %>
-        </tbody>
-    </table>
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-gray-100 py-8 px-4">
+    <div class="max-w-6xl mx-auto">
+        <!-- Header -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <div>
+                <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+                    Hệ thống quản lý siêu thị
+                </h1>
+                <div class="flex items-center gap-3 mt-2">
+                    <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white font-bold shadow-lg">
+                        <%= customer.getName().charAt(0) %>
+                    </div>
+                    <div>
+                        <h2 class="text-xl font-semibold text-white">
+                            Xin chào, <span class="text-purple-300"><%= customer.getName() %></span>!
+                        </h2>
+                        <p class="text-sm text-purple-200/70">Khách hàng</p>
+                    </div>
+                </div>
+            </div>
 
-    <a class="logout" href="index.jsp">Đăng xuất</a>
-</div>
+            <a href="index.jsp" class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-600 hover:to-pink-600 text-white font-medium transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg hover:shadow-red-500/25 flex items-center gap-2">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Đăng xuất</span>
+            </a>
+        </div>
+
+        <!-- Search Form -->
+        <div class="bg-dark-800/50 backdrop-blur-lg p-6 rounded-2xl shadow-xl border border-purple-500/20 mb-8 animate-fade-in">
+            <form action="products" method="get" class="flex flex-col md:flex-row gap-4">
+                <div class="flex-1 relative">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <i class="fas fa-search text-purple-400"></i>
+                    </div>
+                    <input
+                        type="search"
+                        name="query"
+                        placeholder="Tìm kiếm sản phẩm..."
+                        class="w-full pl-10 pr-4 py-3.5 rounded-xl bg-gray-900/80 text-gray-200 border border-purple-500/30 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent placeholder-gray-400 transition-all duration-300"
+                    />
+                </div>
+                <button
+                    type="submit"
+                    class="px-8 py-3.5 rounded-xl font-semibold bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg shadow-purple-500/30 transition-all duration-300 transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <i class="fas fa-search"></i>
+                    <span>Tìm kiếm</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Products Table -->
+        <div class="bg-dark-800/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-purple-500/20 overflow-hidden animate-slide-up">
+            <div class="px-6 py-4 border-b border-purple-500/20 bg-gradient-to-r from-purple-600/20 to-pink-600/20">
+                <h3 class="text-xl font-bold text-white flex items-center gap-2">
+                    <i class="fas fa-boxes text-purple-400"></i>
+                    <span>Danh sách sản phẩm</span>
+                </h3>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left text-gray-200">
+                    <thead class="bg-gradient-to-r from-purple-600 to-pink-600 text-white uppercase text-xs">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-center font-semibold">STT</th>
+                            <th scope="col" class="px-6 py-4 text-center font-semibold">Mã sản phẩm</th>
+                            <th scope="col" class="px-6 py-4 text-center font-semibold">Tên sản phẩm</th>
+                            <th scope="col" class="px-6 py-4 text-center font-semibold">Giá (VNĐ)</th>
+                            <th scope="col" class="px-6 py-4 text-center font-semibold">Hành động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            if (products != null && !products.isEmpty()) {
+                                int index = 1;
+                                for (Product p : products) {
+                        %>
+                        <tr class="border-b border-purple-500/10 hover:bg-purple-500/10 transition-all duration-200 group">
+                            <td class="px-6 py-4 text-center font-medium text-gray-300 group-hover:text-white">
+                                <%= index++ %>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="font-semibold text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full">
+                                    <%= p.getId() %>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-center font-medium text-white">
+                                <%= p.getName() %>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <span class="font-bold text-accent-400 bg-green-500/10 px-3 py-1.5 rounded-full">
+                                    <%= String.format("%,.0f", p.getPrice()) %>
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-center">
+                                <a href="/product/detail?id=<%= p.getId() %>"
+                                   class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 hover:bg-purple-500/20 text-purple-300 hover:text-purple-200 font-medium transition-all duration-300 transform hover:-translate-y-0.5 border border-purple-500/30 hover:border-purple-400/50">
+                                    <i class="fas fa-eye text-sm"></i>
+                                    <span>Xem chi tiết</span>
+                                </a>
+                            </td>
+                        </tr>
+                        <%
+                                }
+                            } else {
+                        %>
+                        <tr>
+                            <td colspan="5" class="px-6 py-12 text-center">
+                                <div class="flex flex-col items-center justify-center text-gray-400">
+                                    <i class="fas fa-box-open text-4xl mb-3 text-purple-500/50"></i>
+                                    <p class="text-lg font-medium">Không có sản phẩm nào được tìm thấy</p>
+                                    <p class="text-sm mt-1">Hãy thử tìm kiếm với từ khóa khác</p>
+                                </div>
+                            </td>
+                        </tr>
+                        <%
+                            }
+                        %>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Footer Stats -->
+            <div class="px-6 py-4 border-t border-purple-500/20 bg-gradient-to-r from-purple-600/10 to-pink-600/10">
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-purple-200/80">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-info-circle text-purple-400"></i>
+                        <span>Tổng số sản phẩm: <strong class="text-white"><%= products != null ? products.size() : 0 %></strong></span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <div class="flex items-center gap-2">
+                            <i class="fas fa-sync-alt text-purple-400"></i>
+                            <span>Dữ liệu được cập nhật mới nhất</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 cursor-pointer group">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h4 class="font-semibold text-white">Lịch sử mua hàng</h4>
+                <p class="text-xs text-purple-200/70 mt-1">Xem các đơn hàng trước</p>
+            </div>
+
+            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 cursor-pointer group">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h4 class="font-semibold text-white">Sản phẩm yêu thích</h4>
+                <p class="text-xs text-purple-200/70 mt-1">Danh sách đã lưu</p>
+            </div>
+
+            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 cursor-pointer group">
+                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h4 class="font-semibold text-white">Hỗ trợ khách hàng</h4>
+                <p class="text-xs text-purple-200/70 mt-1">Liên hệ hỗ trợ</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -30,10 +30,15 @@ public class RegisterServlet extends HttpServlet {
                 String phone = request.getParameter("phoneNumber");
                 String address = request.getParameter("address");
 
-                Customer customer = new Customer(username, password, name, role.toUpperCase(), phone, address);
+                Customer customer = new Customer();
+                customer.setName(name);
+                customer.setUsername(username);
+                customer.setPassword(password);
+                customer.setAddress(address);
+                customer.setPhoneNumber(phone);
 
                 if (userDAO.registerCustomer(customer)) {
-                    response.sendRedirect("Login.jsp");
+                    response.sendRedirect("index.jsp");
                 } else {
                     request.setAttribute("error", "Đăng ký thất bại! Username có thể đã tồn tại.");
                     request.getRequestDispatcher("Register.jsp").forward(request, response);
@@ -44,7 +49,6 @@ public class RegisterServlet extends HttpServlet {
             default:
                 request.setAttribute("error", "Vai trò không hợp lệ!");
                 request.getRequestDispatcher("Register.jsp").forward(request, response);
-                return;
         }
     }
 }

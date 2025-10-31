@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
         String role = request.getParameter("role");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        System.out.println("role: " + role + ", username: " + username + ", password: " + password);
+
         switch (role) {
             case "customer":
                 Customer customer = userDAO.loginCustomer(username, password);
@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("CustomerView.jsp");
                 } else {
                     request.setAttribute("error", "Sai username hoặc password!");
-                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
                 }
                 break;
             case "warehouse_staff":
@@ -42,12 +42,12 @@ public class LoginServlet extends HttpServlet {
                     response.sendRedirect("WarehouseStaffView.jsp");
                 } else {
                     request.setAttribute("error", "Sai username hoặc password!");
-                    request.getRequestDispatcher("Login.jsp").forward(request, response);
+                    request.getRequestDispatcher("index.jsp").forward(request, response);
                 }
+                break;
             default:
                 request.setAttribute("error", "Vai trò không hợp lệ!");
-                request.getRequestDispatcher("Login.jsp").forward(request, response);
-                return;
+                request.getRequestDispatcher("index.jsp").forward(request, response);
         }
     }
 }

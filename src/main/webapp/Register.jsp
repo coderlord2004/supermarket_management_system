@@ -77,7 +77,7 @@
         <p><%= error %></p>
     <% }%>
 
-    <a href="Login.jsp">Đã có tài khoản? Đăng nhập</a>
+    <a href="index.jsp">Đã có tài khoản? Đăng nhập</a>
 </div>
 </body>
 </html>

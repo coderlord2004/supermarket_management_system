@@ -12,9 +12,9 @@ public class UserDAO extends DAO{
     }
 
     public boolean registerCustomer(Customer customer) {
-        String sqlCheck = "SELECT 1 FROM tblUser WHERE username = ?;";
-        String sqlUser = "INSERT INTO tblUser(username, password, name, role) VALUES (?, ?, ?, ?);";
-        String sqlCustomer = "INSERT INTO tblCustomer(phone_number, address, user_id) VALUES (?, ?, ?);";
+        String sqlCheck = "SELECT * FROM tblUser WHERE username = ?;";
+        String sqlUser = "INSERT INTO tblUser(username, password, name) VALUES (?, ?, ?);";
+        String sqlCustomer = "INSERT INTO tblCustomer(phone_number, address, tblUserId) VALUES (?, ?, ?);";
         try {
             PreparedStatement psCheck = conn.prepareStatement(sqlCheck);
             psCheck.setString(1, customer.getUsername());
@@ -28,7 +28,6 @@ public class UserDAO extends DAO{
             psUser.setString(1, customer.getUsername());
             psUser.setString(2, customer.getPassword());
             psUser.setString(3, customer.getName());
-            psUser.setString(4, customer.getRole());
             psUser.executeUpdate();
 
             ResultSet userId = psUser.getGeneratedKeys();
@@ -52,8 +51,8 @@ public class UserDAO extends DAO{
 
     public Customer loginCustomer(String username, String password) {
         String sql = "SELECT u.*, c.* FROM tblUser AS u " +
-                    "INNER JOIN tblCustomer AS c ON c.user_id = u.id " +
-                    "WHERE username=? AND password=? AND role='CUSTOMER'";
+                    "INNER JOIN tblCustomer AS c ON c.tblUserId = u.id " +
+                    "WHERE u.username=? AND u.password=?";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -67,7 +66,6 @@ public class UserDAO extends DAO{
                 customer.setName(rs.getString("name"));
                 customer.setPhoneNumber(rs.getString("phone_number"));
                 customer.setAddress(rs.getString("address"));
-                customer.setRole("CUSTOMER");
 
                 return customer;
             } else return null;
@@ -78,10 +76,9 @@ public class UserDAO extends DAO{
     }
 
     public WarehouseStaff loginWarehouseStaff(String username, String password) {
-        String sql = "SELECT u.*, w.* FROM tblUser AS u " +
-                "INNER JOIN tblStaff AS s ON s.user_id = u.id " +
-                "INNER JOIN tblWarehouseStaff AS w ON w.staff_id = s.user_id " +
-                "WHERE username=? AND password=? AND role='WAREHOUSE_STAFF'";
+        String sql = "SELECT u.*, s.* FROM tblUser AS u " +
+                "INNER JOIN tblStaff AS s ON s.tblUserId = u.id " +
+                "WHERE u.username=? AND u.password=? AND s.position='WAREHOUSE_STAFF'";
 
         try {
             PreparedStatement ps = conn.prepareStatement(sql);
@@ -93,7 +90,7 @@ public class UserDAO extends DAO{
                 warehouseStaff.setId(rs.getInt("id"));
                 warehouseStaff.setUsername(rs.getString("username"));
                 warehouseStaff.setName(rs.getString("name"));
-                warehouseStaff.setRole("CUSTOMER");
+                warehouseStaff.setPosition(rs.getString("position"));
 
                 return warehouseStaff;
             } else return null;

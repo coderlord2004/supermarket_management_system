@@ -4,14 +4,6 @@ public class Customer extends User{
     private String phoneNumber;
     private String address;
 
-    public Customer() {}
-
-    public Customer(String username, String password, String name,  String role, String phoneNumber, String address) {
-        super(username, password, name, role);
-        this.phoneNumber = phoneNumber;
-        this.address = address;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
