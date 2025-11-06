@@ -16,8 +16,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hệ thống quản lý siêu thị</title>
 </head>
-<body class="bg-gradient-to-br from-dark-900 via-purple-900 to-dark-800 min-h-screen flex items-center justify-center p-4">
-    <div class="bg-dark-800/70 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12 w-full max-w-lg border border-purple-500/20">
+<body class="bg-gradient-to-br from-slate-900 to-slate-800 text-gray-100 min-h-screen font-sans flex items-center justify-center p-4">
+    <div class="bg-dark-600 backdrop-blur-lg rounded-2xl shadow-2xl p-8 md:p-12 w-full max-w-lg border border-purple-500/20">
         <div class="text-center mb-8">
             <h1 class="text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
                 Hệ thống quản lý siêu thị

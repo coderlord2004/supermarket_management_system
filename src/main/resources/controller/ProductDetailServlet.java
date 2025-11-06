@@ -12,18 +12,18 @@ public class ProductDetailServlet extends HttpServlet {
     private final ProductDAO productDAO = new ProductDAO();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String idParam = request.getParameter("id");
+        String idParam = req.getParameter("id");
         if (idParam != null) {
             try {
                 int id = Integer.parseInt(idParam);
                 Product product = productDAO.getProductDetail(id);
-                request.setAttribute("product", product);
-                request.getRequestDispatcher("/ProductDetailView.jsp").forward(request, response);
+                req.setAttribute("product", product);
+                req.getRequestDispatcher("/ProductDetailView.jsp").forward(req, resp);
                 return;
             } catch (Exception e) {}
         }
-        response.sendRedirect("products");
+        resp.sendRedirect("products");
     }
 }

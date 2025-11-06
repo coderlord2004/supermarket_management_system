@@ -53,16 +53,14 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-gray-100 py-8 px-4">
     <div class="max-w-4xl mx-auto">
-        <!-- Header -->
         <div class="text-center mb-8 animate-fade-in">
             <h1 class="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2">
                 Hệ thống quản lý siêu thị
             </h1>
-            <p class="text-purple-200/70">Chi tiết sản phẩm</p>
+            <p class="text-purple-200 text-xl">Chi tiết sản phẩm</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Product Image Section -->
             <div class="bg-dark-800/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-purple-500/20 p-6 animate-slide-up">
                 <div class="w-full h-64 bg-gradient-to-br from-purple-600/20 to-pink-600/20 rounded-xl flex items-center justify-center mb-4 border border-purple-500/30">
                     <i class="fas fa-box text-6xl text-purple-400/60"></i>
@@ -76,7 +74,6 @@
                 </div>
             </div>
 
-            <!-- Product Details Section -->
             <div class="bg-dark-800/50 backdrop-blur-lg rounded-2xl shadow-2xl border border-purple-500/20 p-8 animate-slide-up">
                 <div class="flex items-center gap-3 mb-6">
                     <div class="w-10 h-10 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white">
@@ -86,7 +83,6 @@
                 </div>
 
                 <div class="space-y-6">
-                    <!-- Product Name -->
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center mt-1">
                             <i class="fas fa-cube text-purple-400 text-sm"></i>
@@ -97,7 +93,6 @@
                         </div>
                     </div>
 
-                    <!-- Price -->
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-full bg-green-500/10 flex items-center justify-center mt-1">
                             <i class="fas fa-tag text-green-400 text-sm"></i>
@@ -110,13 +105,12 @@
                         </div>
                     </div>
 
-                    <!-- Stock -->
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center mt-1">
                             <i class="fas fa-boxes text-blue-400 text-sm"></i>
                         </div>
                         <div class="flex-1">
-                            <p class="text-purple-300 font-semibold mb-1">Tồn kho</p>
+                            <p class="text-purple-300 font-semibold mb-1">Số lượng trong kho</p>
                             <div class="flex items-center gap-3">
                                 <span class="text-white text-lg"><%= product.getStock() %> sản phẩm</span>
                                 <% if (product.getStock() > 0) { %>
@@ -125,14 +119,13 @@
                                     </span>
                                 <% } else { %>
                                     <span class="px-2 py-1 bg-red-500/20 text-red-400 text-xs rounded-full border border-red-500/30">
-                                        <i class="fas fa-times mr-1"></i>Hết hàng
+                                        <i class="fas fa-times mr-1"></i>Đã hết hàng
                                     </span>
                                 <% } %>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Description -->
                     <div class="flex items-start gap-4">
                         <div class="w-8 h-8 rounded-full bg-yellow-500/10 flex items-center justify-center mt-1">
                             <i class="fas fa-file-alt text-yellow-400 text-sm"></i>
@@ -146,53 +139,13 @@
                     </div>
                 </div>
 
-                <!-- Action Buttons -->
                 <div class="mt-8 pt-6 border-t border-purple-500/20 flex flex-col sm:flex-row gap-4">
                     <a href="/products"
                        class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-700 hover:bg-gray-600 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 border border-gray-600 hover:border-gray-500">
                         <i class="fas fa-arrow-left"></i>
                         <span>Quay lại danh sách</span>
                     </a>
-
-                    <% if (product.getStock() > 0) { %>
-                    <button class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-0.5 shadow-lg shadow-purple-500/30">
-                        <i class="fas fa-cart-plus"></i>
-                        <span>Thêm vào giỏ hàng</span>
-                    </button>
-                    <% } else { %>
-                    <button class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-gray-600 text-gray-400 font-semibold rounded-xl border border-gray-500 cursor-not-allowed" disabled>
-                        <i class="fas fa-cart-plus"></i>
-                        <span>Hết hàng</span>
-                    </button>
-                    <% } %>
                 </div>
-            </div>
-        </div>
-
-        <!-- Additional Info -->
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 group">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg">
-                    <i class="fas fa-shipping-fast"></i>
-                </div>
-                <h4 class="font-semibold text-white mb-1">Giao hàng nhanh</h4>
-                <p class="text-xs text-purple-200/70">Miễn phí với đơn từ 500K</p>
-            </div>
-
-            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 group">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h4 class="font-semibold text-white mb-1">Bảo hành chính hãng</h4>
-                <p class="text-xs text-purple-200/70">12 tháng từ nhà sản xuất</p>
-            </div>
-
-            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 group">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg">
-                    <i class="fas fa-undo-alt"></i>
-                </div>
-                <h4 class="font-semibold text-white mb-1">Đổi trả dễ dàng</h4>
-                <p class="text-xs text-purple-200/70">7 ngày không cần lý do</p>
             </div>
         </div>
     </div>

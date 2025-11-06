@@ -5,57 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a02088e-aa56-49f1-9e0b-05c80e08aeac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.fastRequest/config/fastRequestCurrentProjectConfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.ask2agent.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/fastRequest/fastRequestCurrentProjectLocalConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/catalina.policy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/catalina.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/jaspic-providers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/jaspic-providers.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/logging.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/server.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/tomcat-users.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/tomcat-users.xsd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.smarttomcat/SuperMarketManager/conf/web.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/controller/ApproveOrderDetailServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/controller/OrderServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dao/DeliveryStaffDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dao/OrderDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dao/OrderDetailDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/model/DeliveryStaff.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ApproveOrderDetailView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/ProductDetailView.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/layout/head.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/controller/InvoiceServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/dao/InvoiceDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ApproveOrderDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/OrderDetailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/OrderServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/ProductDetailServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/ProductServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/Invoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/Invoice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/OrderDetail.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/OrderDetail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/Staff.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/model/WarehouseStaff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/model/WarehouseStaff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/DeliveryStaffDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/DeliveryStaffDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/OrderDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/OrderDetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/OrderDetailDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ApproveOrderDetailView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ApproveOrderDetailView.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/ApproveOrderView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ApproveOrderView.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/CustomerView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CustomerView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Login.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProductDetail.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/Register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/Register.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProductDetailView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProductDetailView.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WarehouseStaffView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WarehouseStaffView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,28 +74,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;Smart Tomcat.Tomcat: SuperMarketManager (2).executor&quot;: &quot;Run&quot;,
-    &quot;Smart Tomcat.Tomcat: SuperMarketManager.executor&quot;: &quot;Run&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/SuperMarketManager&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "Smart Tomcat.Tomcat: SuperMarketManager (2).executor": "Run",
+    "Smart Tomcat.Tomcat: SuperMarketManager.executor": "Run",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "<unknown>",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/SuperMarketManager",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "show.migrate.to.gradle.popup": "false"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JAVA&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JAVA"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Tomcat: SuperMarketManager" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
@@ -165,5 +132,16 @@
       <updated>1761128773365</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

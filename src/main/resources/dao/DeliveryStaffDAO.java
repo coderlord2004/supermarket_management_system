@@ -7,6 +7,29 @@ import java.sql.ResultSet;
 import java.util.List;
 
 public class DeliveryStaffDAO extends DAO{
+    public DeliveryStaff getDeliveryStaff(int id) {
+        String sql = "SELECT u.id, u.name FROM tblStaff AS s " +
+                "INNER JOIN tblUser AS u ON s.tblUserId = u.id " +
+                "WHERE s.position = 'DELIVERY_STAFF' AND u.id = ?";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, id);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                DeliveryStaff staff = new DeliveryStaff();
+                staff.setId(rs.getInt("id"));
+                staff.setName(rs.getString("name"));
+
+                return staff;
+            }
+            return null;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public List<DeliveryStaff> getAllDeliveryStaff() {
         String sql = "SELECT u.id, u.name FROM tblStaff AS s " +
                 "INNER JOIN tblUser AS u ON s.tblUserId = u.id " +

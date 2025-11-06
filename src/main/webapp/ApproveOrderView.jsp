@@ -37,9 +37,12 @@
                 <span>Duyệt đơn hàng</span>
             </div>
         </div>
-        <div class="bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2 text-sm shadow-lg">
-            Nhân viên kho: <span class="text-indigo-400 font-semibold"><%= warehouseStaff.getName() %></span> |
-            <a href="index.jsp" class="text-red-400 hover:text-red-300 hover:underline">Đăng xuất</a>
+        <div class="bg-slate-800/50 border border-slate-700 rounded-lg px-4 py-2 text-sm shadow-lg flex flex-col items-center justify-center">
+            <h1 class="font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-2 text-[110%]">Hệ thống quản lý siêu thị</h1>
+            <div>
+                Nhân viên kho: <span class="text-indigo-400 font-semibold"><%= warehouseStaff.getName() %></span> |
+                <a href="index.jsp" class="text-red-400 hover:text-red-300 hover:underline">Đăng xuất</a>
+            </div>
         </div>
     </div>
 
@@ -47,7 +50,9 @@
     <div class="bg-slate-800/60 border border-slate-700 rounded-xl shadow-xl overflow-hidden backdrop-blur-md">
         <div class="px-6 py-4 border-b border-slate-700 flex items-center justify-between">
             <h2 class="text-lg font-semibold text-gray-100 flex items-center gap-2">
-                <i class="fas fa-clipboard-list text-indigo-400"></i> Danh sách đơn hàng
+                <i class="fas fa-clipboard-list text-indigo-400"></i>
+                Danh sách đơn hàng
+                <span class="text-amber-300">(Tổng cộng <%= orders != null ? orders.size() : 0 %> đơn)</span>
             </h2>
         </div>
 
@@ -61,19 +66,23 @@
                 <table class="min-w-full text-sm">
                     <thead class="bg-slate-700/50 text-indigo-300 uppercase text-xs">
                     <tr>
-                        <th class="px-4 py-3 text-left">Mã đơn hàng</th>
+                        <th class="px-4 py-3 text-left">#</th>
+                        <th class="px-4 py-3 text-left">Mã</th>
                         <th class="px-4 py-3 text-left">Tên khách hàng</th>
                         <th class="px-4 py-3 text-left">Số điện thoại</th>
                         <th class="px-4 py-3 text-left">Địa chỉ giao hàng</th>
                         <th class="px-4 py-3 text-left">Ngày đặt hàng</th>
                         <th class="px-4 py-3 text-left">Trạng thái</th>
                         <th class="px-4 py-3 text-left">Ngày duyệt đơn</th>
+                        <th class="px-4 py-3 text-left">Người duyệt</th>
                         <th class="px-4 py-3 text-center">Thao tác</th>
                     </tr>
                     </thead>
                     <tbody class="divide-y divide-slate-700">
-                    <% for (Order order : orders) {
+                    <% for (int i=0; i<orders.size(); i++) {
+                        Order order = orders.get(i);
                         Customer customer = order.getCustomer();
+                        WarehouseStaff approver = order.getWarehouseStaff();
 
                         String status = order.getStatus() == null ? "" : order.getStatus();
                         String statusText;
@@ -87,6 +96,7 @@
                         }
                     %>
                         <tr class="hover:bg-slate-700/40 transition">
+                            <td class="px-4 py-3 font-medium text-gray-100"><%= (i+1) %></td>
                             <td class="px-4 py-3 font-medium text-gray-100"><%= order.getId() %></td>
                             <td class="px-4 py-3"><%= customer != null ? customer.getName() : "—" %></td>
                             <td class="px-4 py-3"><%= customer != null ? customer.getPhoneNumber() : "—" %></td>
@@ -100,10 +110,14 @@
                             <td class="px-4 py-3">
                                 <%= order.getApprovedDate() != null ? vnDateFormat.format(order.getApprovedDate()) : "—" %>
                             </td>
+                            <td class="px-4 py-3">
+                                <%= approver != null ? approver.getName() : "—" %>
+                            </td>
                             <td class="px-4 py-3 text-center">
                                 <% if ("PENDING".equals(order.getStatus()) || "NEW".equals(order.getStatus())) { %>
                                     <form action="/approve-order/detail" method="GET" class="inline">
                                         <input type="hidden" name="orderId" value="<%= order.getId() %>">
+                                        <input type="hidden" name="warehouseStaffId" value="<%= warehouseStaff.getId() %>">
                                         <button type="submit"
                                             class="inline-flex items-center gap-2 px-4 py-2 bg-emerald-600 hover:bg-emerald-500
                                                    text-white rounded-lg font-medium shadow-md transition">

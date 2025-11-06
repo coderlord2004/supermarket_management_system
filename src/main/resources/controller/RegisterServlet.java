@@ -16,19 +16,19 @@ public class RegisterServlet extends HttpServlet {
     private final UserDAO userDAO = new UserDAO();
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
 
-        String role = request.getParameter("role");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        String name = request.getParameter("name");
+        String role = req.getParameter("role");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
+        String name = req.getParameter("name");
 
         switch (role) {
             case "customer":
-                String phone = request.getParameter("phoneNumber");
-                String address = request.getParameter("address");
+                String phone = req.getParameter("phoneNumber");
+                String address = req.getParameter("address");
 
                 Customer customer = new Customer();
                 customer.setName(name);
@@ -38,17 +38,17 @@ public class RegisterServlet extends HttpServlet {
                 customer.setPhoneNumber(phone);
 
                 if (userDAO.registerCustomer(customer)) {
-                    response.sendRedirect("index.jsp");
+                    resp.sendRedirect("index.jsp");
                 } else {
-                    request.setAttribute("error", "Đăng ký thất bại! Username có thể đã tồn tại.");
-                    request.getRequestDispatcher("Register.jsp").forward(request, response);
+                    req.setAttribute("error", "Đăng ký thất bại! Username có thể đã tồn tại.");
+                    req.getRequestDispatcher("Register.jsp").forward(req, resp);
                 }
                 break;
             case "warehouse_staff":
                 break;
             default:
-                request.setAttribute("error", "Vai trò không hợp lệ!");
-                request.getRequestDispatcher("Register.jsp").forward(request, response);
+                req.setAttribute("error", "Vai trò không hợp lệ!");
+                req.getRequestDispatcher("Register.jsp").forward(req, resp);
         }
     }
 }

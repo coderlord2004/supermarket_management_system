@@ -191,33 +191,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Quick Actions -->
-        <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 cursor-pointer group">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
-                    <i class="fas fa-history"></i>
-                </div>
-                <h4 class="font-semibold text-white">Lịch sử mua hàng</h4>
-                <p class="text-xs text-purple-200/70 mt-1">Xem các đơn hàng trước</p>
-            </div>
-
-            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 cursor-pointer group">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <h4 class="font-semibold text-white">Sản phẩm yêu thích</h4>
-                <p class="text-xs text-purple-200/70 mt-1">Danh sách đã lưu</p>
-            </div>
-
-            <div class="bg-dark-800/50 backdrop-blur-lg p-4 rounded-xl border border-purple-500/20 text-center hover:bg-purple-500/10 transition-all duration-300 cursor-pointer group">
-                <div class="w-12 h-12 mx-auto mb-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-lg group-hover:scale-110 transition-transform duration-300">
-                    <i class="fas fa-headset"></i>
-                </div>
-                <h4 class="font-semibold text-white">Hỗ trợ khách hàng</h4>
-                <p class="text-xs text-purple-200/70 mt-1">Liên hệ hỗ trợ</p>
-            </div>
-        </div>
     </div>
 </body>
 </html>

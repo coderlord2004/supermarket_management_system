@@ -14,40 +14,40 @@ public class LoginServlet extends HttpServlet {
     private final UserDAO userDAO = new UserDAO();
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
 
-        String role = request.getParameter("role");
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        String role = req.getParameter("role");
+        String username = req.getParameter("username");
+        String password = req.getParameter("password");
 
         switch (role) {
             case "customer":
                 Customer customer = userDAO.loginCustomer(username, password);
                 if (customer != null) {
-                    HttpSession session = request.getSession();
+                    HttpSession session = req.getSession();
                     session.setAttribute("customer", customer);
-                    response.sendRedirect("CustomerView.jsp");
+                    resp.sendRedirect("CustomerView.jsp");
                 } else {
-                    request.setAttribute("error", "Sai username hoặc password!");
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    req.setAttribute("error", "Sai username hoặc password!");
+                    req.getRequestDispatcher("index.jsp").forward(req, resp);
                 }
                 break;
             case "warehouse_staff":
                 WarehouseStaff warehouseStaff = userDAO.loginWarehouseStaff(username, password);
                 if (warehouseStaff != null) {
-                    HttpSession session = request.getSession();
+                    HttpSession session = req.getSession();
                     session.setAttribute("warehouseStaff", warehouseStaff);
-                    response.sendRedirect("WarehouseStaffView.jsp");
+                    resp.sendRedirect("WarehouseStaffView.jsp");
                 } else {
-                    request.setAttribute("error", "Sai username hoặc password!");
-                    request.getRequestDispatcher("index.jsp").forward(request, response);
+                    req.setAttribute("error", "Sai username hoặc password!");
+                    req.getRequestDispatcher("index.jsp").forward(req, resp);
                 }
                 break;
             default:
-                request.setAttribute("error", "Vai trò không hợp lệ!");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
+                req.setAttribute("error", "Vai trò không hợp lệ!");
+                req.getRequestDispatcher("index.jsp").forward(req, resp);
         }
     }
 }

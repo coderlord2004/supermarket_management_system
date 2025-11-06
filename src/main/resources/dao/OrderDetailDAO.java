@@ -12,7 +12,7 @@ import java.util.List;
 
 public class OrderDetailDAO extends DAO{
 
-    public List<OrderDetail> findByOrderId(int orderId) {
+    public List<OrderDetail> getAllOrderDetail(int orderId) {
         String sql = "SELECT od.*, p.id AS product_id, p.name, p.price, p.stock, p.description " +
                 "FROM tblOrderDetail od " +
                 "INNER JOIN tblProduct p ON od.tblProductId = p.id " +

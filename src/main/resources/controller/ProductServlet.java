@@ -11,16 +11,16 @@ public class ProductServlet extends HttpServlet {
     private final ProductDAO productDAO = new ProductDAO();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
+        req.setCharacterEncoding("UTF-8");
 
-        String query = request.getParameter("query");
+        String query = req.getParameter("query");
         if (query != null && !query.trim().isEmpty()) {
-            request.setAttribute("products", productDAO.getProductsByKeyword(query));
+            req.setAttribute("products", productDAO.getProductsByKeyword(query));
         }
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("CustomerView.jsp");
-        dispatcher.forward(request, response);
+        RequestDispatcher dispatcher = req.getRequestDispatcher("CustomerView.jsp");
+        dispatcher.forward(req, resp);
     }
 }
