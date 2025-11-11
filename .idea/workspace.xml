@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="7a02088e-aa56-49f1-9e0b-05c80e08aeac" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/InvoiceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/InvoiceServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/InvoiceDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ApproveOrderDetailView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/warehousestaff/ApproveOrderDetailView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ApproveOrderView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/warehousestaff/ApproveOrderView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/CustomerView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/customer/CustomerView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/warehousestaff/InvoiceView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProductDetailView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/customer/ProductDetailView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WarehouseStaffView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view/warehousestaff/WarehouseStaffView.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +85,12 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\SuperMarketManager\src\main\webapp\view\customer" />
+      <recent name="D:\SuperMarketManager\src\main\webapp\view\warehousestaff" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Tomcat: SuperMarketManager" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />

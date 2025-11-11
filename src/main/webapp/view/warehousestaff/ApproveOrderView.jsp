@@ -88,10 +88,10 @@
                         String statusText;
                         String statusColor;
                         if (status.equals("EXPORTED")) {
-                            statusText = "Đã duyệt";
+                            statusText = "Đã xuất";
                             statusColor = "bg-blue-900/40 text-blue-400";
                         } else {
-                            statusText = "Chờ duyệt";
+                            statusText = "Chưa xuất";
                             statusColor = "bg-amber-900/40 text-amber-400";
                         }
                     %>
