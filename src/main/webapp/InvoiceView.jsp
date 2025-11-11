@@ -17,13 +17,14 @@
 
     request.setAttribute("title", "Hóa đơn");
 %>
-<%@ include file="layout/head.jsp" %>
+
 <!DOCTYPE html>
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hóa đơn</title>
+    <%@ include file="layout/head.jsp" %>
     <style>
         @media print {
             button, a, .no-print { display: none !important; }
@@ -130,7 +131,6 @@
                     <% } %>
                 </tbody>
                 <tfoot>
-                    <input type="hidden" name="totalAmount" value="<%= totalAmount %>"/>
                     <tr class="bg-gray-700">
                         <td colspan="6" class="px-4 py-2 text-right font-bold">Tổng cộng:</td>
                         <td class="px-4 py-2 text-right text-green-400 font-semibold"><%= String.format("%,.0f ₫", totalAmount) %></td>

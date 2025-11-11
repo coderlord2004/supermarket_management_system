@@ -20,7 +20,6 @@ public class InvoiceServlet extends HttpServlet {
         try {
             int orderId = Integer.parseInt(req.getParameter("orderId"));
             int deliveryStaffId = Integer.parseInt(req.getParameter("deliveryStaffId"));
-            float totalAmount = Float.parseFloat(req.getParameter("totalAmount"));
 
             Order order = orderDAO.getOrder(orderId);
             DeliveryStaff deliveryStaff = deliveryStaffDAO.getDeliveryStaff(deliveryStaffId);
@@ -28,7 +27,6 @@ public class InvoiceServlet extends HttpServlet {
             Invoice invoice = new Invoice();
             invoice.setOrder(order);
             invoice.setDeliveryStaff(deliveryStaff);
-            invoice.setTotalAmount(totalAmount);
 
             boolean created = invoiceDAO.save(invoice);
 

@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7a02088e-aa56-49f1-9e0b-05c80e08aeac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/controller/InvoiceServlet.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dao/InvoiceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ApproveOrderDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/OrderDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/OrderServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/OrderServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ProductDetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/ProductDetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/RegisterServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/RegisterServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/DeliveryStaffDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/DeliveryStaffDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/OrderDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/OrderDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/OrderDetailDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/OrderDetailDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ApproveOrderDetailView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ApproveOrderDetailView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ApproveOrderView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ApproveOrderView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/CustomerView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/CustomerView.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/controller/InvoiceServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/controller/InvoiceServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dao/InvoiceDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dao/InvoiceDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/InvoiceView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/ProductDetailView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/ProductDetailView.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WarehouseStaffView.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WarehouseStaffView.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,28 +60,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Smart Tomcat.Tomcat: SuperMarketManager (2).executor": "Run",
-    "Smart Tomcat.Tomcat: SuperMarketManager.executor": "Run",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "<unknown>",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/SuperMarketManager",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Smart Tomcat.Tomcat: SuperMarketManager (2).executor&quot;: &quot;Run&quot;,
+    &quot;Smart Tomcat.Tomcat: SuperMarketManager.executor&quot;: &quot;Run&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/SuperMarketManager&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JAVA"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JAVA&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Tomcat: SuperMarketManager" type="com.poratu.idea.plugins.tomcat">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
